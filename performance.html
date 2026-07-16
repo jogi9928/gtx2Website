@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance | GTX2</title>
+  <meta name="description" content="GateSpeed benchmark results validated by Intel Labs: L3 forwarding, IPsec VPN, HTTP and HTTPS throughput.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/performance.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-wordmark mono">GTX2</a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      <div class="nav-links">
+        <div class="nav-links-group">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="performance.html" class="nav-link">Performance</a>
+          <a href="solutions.html" class="nav-link">Solutions</a>
+        </div>
+        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="eyebrow reveal">Performance</div>
+      <h1 class="page-heading reveal">The GateSpeed stack</h1>
+      <p class="section-sub reveal">A complete L2 to L7 userspace networking stack built on DPDK. It bypasses the Linux kernel and talks directly to the NIC.</p>
+    </div>
+  </header>
+
+  <section class="stack-section">
+    <div class="container">
+      <div class="stack-diagram reveal">
+        <div class="stack-header">GateSpeed stack. Operates in userspace.</div>
+
+        <div class="stack-group-label">Application</div>
+        <div class="stack-row">
+          <div class="stack-layer mono">L7</div>
+          <div class="stack-capability">Load balancing</div>
+          <div class="stack-desc">Distributes traffic across backend targets entirely in userspace</div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-layer mono">L6</div>
+          <div class="stack-capability">SSL/TLS</div>
+          <div class="stack-desc">Encryption termination with QAT-assisted offload</div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-layer mono">L5</div>
+          <div class="stack-capability">Firewall</div>
+          <div class="stack-desc">Stateful packet filtering at line rate</div>
+        </div>
+
+        <div class="stack-group-label">Session + Transport</div>
+        <div class="stack-row">
+          <div class="stack-layer mono">L4</div>
+          <div class="stack-capability">TCP / UDP</div>
+          <div class="stack-desc">Full userspace transport stack with kernel bypass</div>
+        </div>
+
+        <div class="stack-group-label">Network + Data Link</div>
+        <div class="stack-row">
+          <div class="stack-layer mono">L3</div>
+          <div class="stack-capability">NAT / VPN (IPsec)</div>
+          <div class="stack-desc">Network address translation and IPsec tunneling</div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-layer mono">L2</div>
+          <div class="stack-capability">ARP / MAC filtering</div>
+          <div class="stack-desc">Direct hardware NIC access, no kernel network stack</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="capabilities-section">
+    <div class="container">
+      <h2 class="section-heading reveal">Stack capabilities</h2>
+      <div class="capabilities-list reveal">
+        <div class="capability-row">
+          <div class="capability-title">Load balancing</div>
+          <p class="capability-body">Distributes connections across backend targets without a kernel round trip.</p>
+        </div>
+        <div class="capability-row">
+          <div class="capability-title">VPN</div>
+          <p class="capability-body">IPsec tunneling in software or offloaded to Intel QAT.</p>
+        </div>
+        <div class="capability-row">
+          <div class="capability-title">Firewall</div>
+          <p class="capability-body">Stateful filtering enforced in the userspace data path.</p>
+        </div>
+        <div class="capability-row">
+          <div class="capability-title">SSL/TLS</div>
+          <p class="capability-body">Encryption and termination with hardware-assisted offload.</p>
+        </div>
+        <div class="capability-row">
+          <div class="capability-title">NAT</div>
+          <p class="capability-body">Network address translation handled at the same layer as forwarding.</p>
+        </div>
+        <div class="capability-row">
+          <div class="capability-title">TCP optimization</div>
+          <p class="capability-body">A userspace TCP/UDP stack tuned for kernel-bypass throughput.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benchmark-section">
+    <div class="container">
+      <h2 class="section-heading reveal">Benchmark results</h2>
+      <div class="table-wrap reveal">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Workload</th>
+              <th>Throughput</th>
+              <th>Cores</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>L3 forwarding</td>
+              <td class="mono throughput">200 Gbps</td>
+              <td class="mono">1</td>
+              <td>~20% CPU utilization</td>
+            </tr>
+            <tr>
+              <td>IPsec VPN (software)</td>
+              <td class="mono throughput">92 Gbps</td>
+              <td class="mono">6</td>
+              <td>AES-128-CBC-HMAC-SHA1</td>
+            </tr>
+            <tr>
+              <td>IPsec VPN (QAT)</td>
+              <td class="mono throughput">96 Gbps</td>
+              <td class="mono">4</td>
+              <td>2 software + 2 Intel QAT offload</td>
+            </tr>
+            <tr>
+              <td>HTTP (2MB files)</td>
+              <td class="mono throughput">82 to 85 Gbps</td>
+              <td class="mono">2</td>
+              <td>5K to 40K concurrent connections</td>
+            </tr>
+            <tr>
+              <td>HTTP (10KB files)</td>
+              <td class="mono throughput">82 to 90 Gbps</td>
+              <td class="mono">4</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>HTTPS (QAT-assisted)</td>
+              <td class="mono throughput">61 to 74 Gbps</td>
+              <td class="mono">4</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>RAM efficiency</td>
+              <td class="mono throughput">8x</td>
+              <td class="mono">-</td>
+              <td>vs. kernel networking baseline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="benchmark-footnote reveal">All results from Intel Labs white paper testing. Test hardware: Intel Xeon Gold 6230N / 6342, Intel E810-2CQDA2 100GbE NICs, Intel QAT 8970.</p>
+    </div>
+  </section>
+
+  <section class="scaling-section">
+    <div class="container">
+      <div class="scaling-block reveal">
+        <h2 class="scaling-title">Linear scaling by core</h2>
+        <p class="scaling-body">Performance scales linearly with core count, from Intel Atom through Xeon Scalable. No specialized hardware required. GTX2 runs on white box servers and the Intel hardware you already have on-prem.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-copy">&copy; 2026 GTX2. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="performance.html">Performance</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | GTX2</title>
+  <meta name="description" content="Tell us about your infrastructure. GTX2 will follow up within one business day.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-wordmark mono">GTX2</a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      <div class="nav-links">
+        <div class="nav-links-group">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="performance.html" class="nav-link">Performance</a>
+          <a href="solutions.html" class="nav-link">Solutions</a>
+        </div>
+        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-heading reveal">Contact us</h1>
+      <p class="section-sub reveal">Tell us about your infrastructure. We will follow up within one business day.</p>
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="container">
+      <form id="contact-form" class="contact-form card reveal" action="https://formspree.io/f/REPLACE_WITH_ID" method="POST" novalidate>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <span class="field-error" data-error-for="name"></span>
+          </div>
+          <div class="form-field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required>
+            <span class="field-error" data-error-for="company"></span>
+          </div>
+          <div class="form-field">
+            <label for="role">Role</label>
+            <input type="text" id="role" name="role" required>
+            <span class="field-error" data-error-for="role"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <span class="field-error" data-error-for="email"></span>
+          </div>
+        </div>
+        <div class="form-field form-field-full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+          <span class="field-error" data-error-for="message"></span>
+        </div>
+        <button type="submit" class="btn btn-secondary submit-btn">
+          <span class="btn-label">Send message</span>
+        </button>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-copy">&copy; 2026 GTX2. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="performance.html">Performance</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
