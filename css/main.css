@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Sora:wght@500;600;700&display=swap');
 
 :root {
+  --nav-height: 56px;
   --color-bg: #F8F9FA;
   --color-surface: #FFFFFF;
   --color-border: #E5E7EB;
@@ -19,6 +20,9 @@
 
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-plex: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sora: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --radius-card: 8px;
 
@@ -44,10 +48,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
   margin: 0;
+  padding-top: var(--nav-height);
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -128,15 +134,20 @@ p {
 /* ---- Nav ---- */
 
 .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-bg);
+  background: #FFFFFF;
 }
 
 .site-nav .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 84px;
+  height: var(--nav-height);
 }
 
 .nav-wordmark {
@@ -184,6 +195,15 @@ p {
   bottom: -1px;
   height: 2px;
   background: var(--color-primary);
+}
+
+.nav-link.nav-link-contact {
+  color: var(--color-primary);
+}
+
+.nav-link.nav-link-contact:hover,
+.nav-link.nav-link-contact.active {
+  color: var(--color-primary-dark);
 }
 
 .nav-toggle {
@@ -314,6 +334,10 @@ p {
 /* ---- Mobile nav ---- */
 
 @media (max-width: 768px) {
+  :root {
+    --nav-height: 52px;
+  }
+
   .site-nav .container {
     height: auto;
     padding-top: var(--space-sm);

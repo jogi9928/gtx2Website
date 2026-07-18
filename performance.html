@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Performance | GTX2</title>
-  <meta name="description" content="GateSpeed benchmark results validated by Intel Labs: L3 forwarding, IPsec VPN, HTTP and HTTPS throughput.">
+  <meta name="description" content="GTX2 runs load balancing, firewall, NAS, and nginx-facing traffic on a userspace data plane validated by Intel Labs.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/performance.css">
 </head>
@@ -20,98 +20,22 @@
           <a href="performance.html" class="nav-link">Performance</a>
           <a href="solutions.html" class="nav-link">Solutions</a>
         </div>
-        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+        <a href="contact.html" class="nav-link nav-link-contact">Contact Us</a>
       </div>
     </div>
   </nav>
 
   <header class="page-header">
-    <div class="container">
-      <div class="eyebrow reveal">Performance</div>
-      <h1 class="page-heading reveal">The GateSpeed stack</h1>
-      <p class="section-sub reveal">A complete L2 to L7 userspace networking stack built on DPDK. It bypasses the Linux kernel and talks directly to the NIC.</p>
+    <div class="container reveal">
+      <h1 class="page-heading">Performance for the roles you actually deploy</h1>
+      <p class="section-sub">GTX2 runs load balancing, firewall, NAS, and nginx-facing traffic on a userspace data plane, with Intel Labs validation behind the core forwarding and HTTP workloads.</p>
     </div>
   </header>
 
-  <section class="stack-section">
-    <div class="container">
-      <div class="stack-diagram reveal">
-        <div class="stack-header">GateSpeed stack. Operates in userspace.</div>
-
-        <div class="stack-group-label">Application</div>
-        <div class="stack-row">
-          <div class="stack-layer mono">L7</div>
-          <div class="stack-capability">Load balancing</div>
-          <div class="stack-desc">Distributes traffic across backend targets entirely in userspace</div>
-        </div>
-        <div class="stack-row">
-          <div class="stack-layer mono">L6</div>
-          <div class="stack-capability">SSL/TLS</div>
-          <div class="stack-desc">Encryption termination with QAT-assisted offload</div>
-        </div>
-        <div class="stack-row">
-          <div class="stack-layer mono">L5</div>
-          <div class="stack-capability">Firewall</div>
-          <div class="stack-desc">Stateful packet filtering at line rate</div>
-        </div>
-
-        <div class="stack-group-label">Session + Transport</div>
-        <div class="stack-row">
-          <div class="stack-layer mono">L4</div>
-          <div class="stack-capability">TCP / UDP</div>
-          <div class="stack-desc">Full userspace transport stack with kernel bypass</div>
-        </div>
-
-        <div class="stack-group-label">Network + Data Link</div>
-        <div class="stack-row">
-          <div class="stack-layer mono">L3</div>
-          <div class="stack-capability">NAT / VPN (IPsec)</div>
-          <div class="stack-desc">Network address translation and IPsec tunneling</div>
-        </div>
-        <div class="stack-row">
-          <div class="stack-layer mono">L2</div>
-          <div class="stack-capability">ARP / MAC filtering</div>
-          <div class="stack-desc">Direct hardware NIC access, no kernel network stack</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="capabilities-section">
-    <div class="container">
-      <h2 class="section-heading reveal">Stack capabilities</h2>
-      <div class="capabilities-list reveal">
-        <div class="capability-row">
-          <div class="capability-title">Load balancing</div>
-          <p class="capability-body">Distributes connections across backend targets without a kernel round trip.</p>
-        </div>
-        <div class="capability-row">
-          <div class="capability-title">VPN</div>
-          <p class="capability-body">IPsec tunneling in software or offloaded to Intel QAT.</p>
-        </div>
-        <div class="capability-row">
-          <div class="capability-title">Firewall</div>
-          <p class="capability-body">Stateful filtering enforced in the userspace data path.</p>
-        </div>
-        <div class="capability-row">
-          <div class="capability-title">SSL/TLS</div>
-          <p class="capability-body">Encryption and termination with hardware-assisted offload.</p>
-        </div>
-        <div class="capability-row">
-          <div class="capability-title">NAT</div>
-          <p class="capability-body">Network address translation handled at the same layer as forwarding.</p>
-        </div>
-        <div class="capability-row">
-          <div class="capability-title">TCP optimization</div>
-          <p class="capability-body">A userspace TCP/UDP stack tuned for kernel-bypass throughput.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="benchmark-section">
     <div class="container">
-      <h2 class="section-heading reveal">Benchmark results</h2>
+      <h2 class="section-heading reveal">Validated workloads</h2>
+      <p class="benchmark-intro reveal">Intel Labs validation covers the forwarding, VPN, HTTP, and HTTPS paths that sit underneath these deployments.</p>
       <div class="table-wrap reveal">
         <table class="benchmark-table">
           <thead>
@@ -172,11 +96,80 @@
     </div>
   </section>
 
+  <section class="feature-section">
+    <div class="container">
+      <div class="feature-intro reveal">
+        <h2 class="section-heading">Feature coverage for deployed workloads</h2>
+        <p class="feature-lead">GTX2 is built around the functions teams actually deploy: distributing traffic, enforcing policy, sitting in front of application servers, and carrying storage-heavy flows on the commodity x86 hardware you already run.</p>
+      </div>
+
+      <div class="feature-carousel reveal" data-feature-carousel>
+        <button class="feature-carousel-control feature-carousel-control-prev" type="button" data-feature-prev aria-label="Previous focus area">
+          <span aria-hidden="true">&larr;</span>
+        </button>
+        <div class="feature-carousel-viewport">
+          <div class="feature-carousel-track" data-feature-track>
+            <article class="feature-card feature-slide feature-slide-distribution is-active">
+              <h3 class="feature-card-title">Load balancing</h3>
+              <p class="feature-card-body">Spread connections across backend pools entirely in userspace, keeping latency and CPU overhead predictable under high concurrency.</p>
+              <div class="feature-card-proof mono">HTTP throughput validated at 82 to 90 Gbps</div>
+            </article>
+
+            <article class="feature-card feature-slide feature-slide-policy">
+              <h3 class="feature-card-title">Firewall</h3>
+              <p class="feature-card-body">Apply stateful filtering directly in the data path instead of bouncing packets through the kernel, so policy enforcement keeps pace with forwarding.</p>
+              <div class="feature-card-proof mono">L3 forwarding validated at 200 Gbps on 1 core</div>
+            </article>
+
+            <article class="feature-card feature-slide feature-slide-storage">
+              <h3 class="feature-card-title">NAS</h3>
+              <p class="feature-card-body">Use the same high-throughput packet path for storage-heavy east-west traffic and NAS-facing nodes without carving out a separate appliance tier.</p>
+              <div class="feature-card-proof mono">Runs on the same commodity x86 footprint as the rest of the fleet</div>
+            </article>
+
+            <article class="feature-card feature-slide feature-slide-delivery">
+              <h3 class="feature-card-title">nginx support</h3>
+              <p class="feature-card-body">Deploy GTX2 in front of nginx or alongside it, keeping the existing HTTP stack while offloading the traffic handling that usually burns kernel time.</p>
+              <div class="feature-card-proof mono">HTTPS validated at 61 to 74 Gbps with QAT assist</div>
+            </article>
+          </div>
+        </div>
+        <button class="feature-carousel-control feature-carousel-control-next" type="button" data-feature-next aria-label="Next focus area">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="deployment-section">
+    <div class="container">
+      <h2 class="section-heading reveal">How it shows up in production</h2>
+      <div class="deployment-list reveal">
+        <div class="deployment-row">
+          <div class="deployment-title">Edge load balancer</div>
+          <p class="deployment-body">Front multiple application pools with userspace connection distribution, then leave nginx or origin services unchanged behind it.</p>
+        </div>
+        <div class="deployment-row">
+          <div class="deployment-title">Inline firewall</div>
+          <p class="deployment-body">Keep security policy and forwarding on the same software path instead of splitting routing and filtering across separate boxes.</p>
+        </div>
+        <div class="deployment-row">
+          <div class="deployment-title">NAS front end</div>
+          <p class="deployment-body">Place GTX2 in front of NAS-heavy services where throughput matters more than appliance branding and keep operations on standard Intel servers.</p>
+        </div>
+        <div class="deployment-row">
+          <div class="deployment-title">nginx acceleration path</div>
+          <p class="deployment-body">Put GTX2 next to nginx when you want to preserve the application-facing stack but remove the kernel bottlenecks in front of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="scaling-section">
     <div class="container">
-      <div class="scaling-block reveal">
-        <h2 class="scaling-title">Linear scaling by core</h2>
-        <p class="scaling-body">Performance scales linearly with core count, from Intel Atom through Xeon Scalable. No specialized hardware required. GTX2 runs on white box servers and the Intel hardware you already have on-prem.</p>
+      <div class="scaling-card reveal">
+        <h2 class="scaling-title">Scale features by core, not by appliance</h2>
+        <p class="scaling-body">Whether the node is fronting nginx, enforcing firewall policy, or handling storage-heavy traffic, performance scales linearly with core count from Intel Atom through Xeon Scalable. No specialized hardware required.</p>
       </div>
     </div>
   </section>
@@ -195,5 +188,6 @@
 
   <script src="js/nav.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/performance-slider.js"></script>
 </body>
 </html>
