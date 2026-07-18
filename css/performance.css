@@ -361,10 +361,12 @@
 
 .scaling-card {
   max-width: 760px;
+  margin: 0 auto;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
   background: var(--color-surface);
+  text-align: center;
 }
 
 .scaling-title {
@@ -373,9 +375,10 @@
 }
 
 .scaling-body {
-  margin-top: var(--space-2xs);
+  margin: var(--space-2xs) auto 0;
   font-size: 15px;
   color: var(--color-text-muted);
+  max-width: 620px;
 }
 
 .scaling-section + .site-footer {
