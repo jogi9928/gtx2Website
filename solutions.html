@@ -63,44 +63,64 @@
 
   <section class="solutions-list">
     <div class="container">
+      <div class="solutions-carousel reveal" data-solutions-carousel role="region" aria-label="GTX2 solution highlights">
+        <div class="solutions-carousel-topline">
+          <p class="solutions-carousel-label mono">Three ways GTX2 changes operations</p>
+          <div class="solutions-carousel-controls">
+            <button class="solutions-carousel-control" type="button" data-solutions-prev aria-label="Previous solution">
+              <span aria-hidden="true">&larr;</span>
+            </button>
+            <button class="solutions-carousel-control" type="button" data-solutions-next aria-label="Next solution">
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+        </div>
 
-      <div class="solution-block reveal">
-        <div class="solution-problem">
-          <p class="solution-headline">100 Gbps, without proprietary hardware.</p>
+        <div class="solutions-carousel-viewport" data-solutions-viewport>
+          <div class="solutions-carousel-track" data-solutions-track>
+            <article class="solution-slide solution-slide-throughput" data-solutions-slide>
+              <div class="solution-block">
+                <div class="solution-problem">
+                  <p class="solution-headline">100 Gbps, without proprietary hardware.</p>
+                </div>
+                <div class="solution-answer">
+                  <h3 class="solution-title">Commodity x86, no proprietary hardware</h3>
+                  <p class="solution-body">Proprietary appliances need branded hardware that is expensive and hard to procure. Software alternatives need SR-IOV tuning and significant integration work. Every competitor requires proprietary hardware, DPU cards, SR-IOV tuning, or deep networking expertise. GTX2 requires none of these.</p>
+                  <div class="stat-badge mono">200 Gbps on a single Xeon core</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="solution-slide solution-slide-deployment" data-solutions-slide>
+              <div class="solution-block">
+                <div class="solution-problem">
+                  <p class="solution-headline">Deploy once, propagate everywhere.</p>
+                </div>
+                <div class="solution-answer">
+                  <h3 class="solution-title">Automated, single-point deployment</h3>
+                  <p class="solution-body">Single-point install propagates GateSpeed across the fleet. DPDK setup, hugepage config, and NIC binding are handled automatically, with binary verification and API confirmation on each node. No DPDK tuning, NUMA config, or kernel expertise.</p>
+                  <div class="stat-badge mono">Single-point install propagates to all nodes</div>
+                </div>
+              </div>
+            </article>
+
+            <article class="solution-slide solution-slide-visibility" data-solutions-slide>
+              <div class="solution-block">
+                <div class="solution-problem">
+                  <p class="solution-headline">Fleet visibility, in one place.</p>
+                </div>
+                <div class="solution-answer">
+                  <h3 class="solution-title">Centralized fleet management</h3>
+                  <p class="solution-body">A centralized config store, per-node health monitoring, log aggregation, and failure alerting. Remote restart and fleet-wide config push. IP, VPN, VLAN, and port management, with network throughput visibility per node.</p>
+                  <div class="stat-badge mono">One management layer for every node</div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="solution-answer">
-          <h3 class="solution-title">Commodity x86, no proprietary hardware</h3>
-          <p class="solution-body">Proprietary appliances need branded hardware that is expensive and hard to procure. Software alternatives need SR-IOV tuning and significant integration work. Every competitor requires proprietary hardware, DPU cards, SR-IOV tuning, or deep networking expertise. GTX2 requires none of these.</p>
-          <div class="stat-badge mono">200 Gbps on a single Xeon core</div>
-        </div>
+
+        <div class="solutions-carousel-pagination" data-solutions-pagination aria-label="Solution slide selection"></div>
       </div>
-
-      <hr class="solution-rule">
-
-      <div class="solution-block reveal">
-        <div class="solution-problem">
-          <p class="solution-headline">Deploy once, propagate everywhere.</p>
-        </div>
-        <div class="solution-answer">
-          <h3 class="solution-title">Automated, single-point deployment</h3>
-          <p class="solution-body">Single-point install propagates GateSpeed across the fleet. DPDK setup, hugepage config, and NIC binding are handled automatically, with binary verification and API confirmation on each node. No DPDK tuning, NUMA config, or kernel expertise.</p>
-          <div class="stat-badge mono">Single-point install propagates to all nodes</div>
-        </div>
-      </div>
-
-      <hr class="solution-rule">
-
-      <div class="solution-block reveal">
-        <div class="solution-problem">
-          <p class="solution-headline">Fleet visibility, in one place.</p>
-        </div>
-        <div class="solution-answer">
-          <h3 class="solution-title">Centralized fleet management</h3>
-          <p class="solution-body">A centralized config store, per-node health monitoring, log aggregation, and failure alerting. Remote restart and fleet-wide config push. IP, VPN, VLAN, and port management, with network throughput visibility per node.</p>
-          <div class="stat-badge mono">One management layer for every node</div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -118,5 +138,6 @@
 
   <script src="js/nav.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/solutions-carousel.js"></script>
 </body>
 </html>
