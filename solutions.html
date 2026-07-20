@@ -25,13 +25,13 @@
     </div>
   </nav>
 
-  <header class="page-header">
-    <div class="container">
-      <div class="eyebrow reveal">Solutions</div>
-      <h1 class="page-heading reveal">Smarter infrastructure, not more of it</h1>
-      <p class="section-sub reveal">The performance comes from the software, not the iron.</p>
-    </div>
-  </header>
+  <div class="solutions-hero-band">
+    <header class="page-header">
+      <div class="container">
+        <h1 class="page-heading reveal">Smarter infrastructure, not more of it</h1>
+        <p class="section-sub reveal">The performance comes from the software, not the iron.</p>
+      </div>
+    </header>
 
   <section class="comparison-section">
     <div class="container">
@@ -58,11 +58,16 @@
           </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <section class="solutions-list">
     <div class="container">
+      <div class="solutions-carousel reveal" data-solutions-carousel role="region" aria-label="GTX2 solution highlights">
+        <div class="solutions-carousel-stage">
+          <button class="solutions-carousel-control solutions-carousel-control-prev" type="button" data-solutions-prev aria-label="Previous solution">
+            <span aria-hidden="true">&larr;</span>
+          </button>
 
       <div class="solution-block reveal">
         <div class="solution-problem">
@@ -88,7 +93,20 @@
         </div>
       </div>
 
-      <hr class="solution-rule">
+              <article class="solution-slide solution-slide-visibility" data-solutions-slide>
+                <div class="solution-block">
+                  <div class="solution-problem">
+                    <p class="solution-headline">Fleet visibility, in one place.</p>
+                  </div>
+                  <div class="solution-answer">
+                    <h3 class="solution-title">Centralized fleet management</h3>
+                    <p class="solution-body">A centralized config store, per-node health monitoring, log aggregation, and failure alerting. Remote restart and fleet-wide config push. IP, VPN, VLAN, and port management, with network throughput visibility per node.</p>
+                    <div class="stat-badge mono">One management layer for every node</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
 
       <div class="solution-block reveal">
         <div class="solution-problem">
@@ -99,8 +117,9 @@
           <p class="solution-body">GTX2 gives you centralized configuration, per-node health monitoring, log aggregation, and failure alerting. Push config fleet-wide or restart nodes remotely from one place. IP, VPN, VLAN, and port management, with network throughput visibility per node.</p>
           <div class="stat-badge mono">One management layer for every node</div>
         </div>
-      </div>
 
+        <div class="solutions-carousel-pagination" data-solutions-pagination aria-label="Solution slide selection"></div>
+      </div>
     </div>
   </section>
 
@@ -118,5 +137,6 @@
 
   <script src="js/nav.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/solutions-carousel.js"></script>
 </body>
 </html>
