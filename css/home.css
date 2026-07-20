@@ -107,6 +107,21 @@
   color: var(--color-text-muted);
 }
 
+.stats-citation {
+  margin-top: var(--space-md);
+  font-size: 12px;
+  color: var(--color-text-faint);
+}
+
+.stats-citation a {
+  color: var(--color-text-faint);
+  text-decoration: underline;
+}
+
+.stats-citation a:hover {
+  color: var(--color-primary);
+}
+
 /* ---- Teasers: light section, uniform bordered card grid ---- */
 
 .teasers {
@@ -301,21 +316,34 @@
   }
 
   .hero-headline {
-    font-size: 38px;
+    font-size: 44px;
   }
 
   .hero-support {
     margin-left: 0;
     max-width: none;
+    width: 100%;
   }
 
   .hero-pitch {
     font-size: 16px;
   }
 
+  .hero-support .btn {
+    width: 100%;
+  }
+
+  .stats-row .container {
+    text-align: center;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  .stat-col {
+    width: 100%;
   }
 
   .stat-number {

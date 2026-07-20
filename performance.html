@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Performance | GTX2</title>
-  <meta name="description" content="GTX2 delivers load balancing, firewall, VPN, and high-throughput data movement on a userspace data plane validated by Intel Labs.">
+  <meta name="description" content="Intel Labs validated: 200 Gbps L3 forwarding on a single core, 92 Gbps IPsec VPN, 8x RAM efficiency.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/performance.css">
 </head>
@@ -35,7 +35,14 @@
   <section class="benchmark-section">
     <div class="container">
       <h2 class="section-heading reveal">Validated workloads</h2>
-      <p class="benchmark-intro reveal">Intel Labs validated forwarding, VPN, and HTTP throughput on commodity Intel hardware.</p>
+      <div class="intel-validation reveal">
+        <div class="intel-validation-eyebrow mono">Tested at Intel Labs</div>
+        <p class="intel-validation-body">GateSpeed and Intel have partnered since 2021 on traffic management and packet forwarding technology. The forwarding, VPN, and HTTP throughput results below come from Intel Labs testing conducted Spring 2024 on commodity Intel Xeon hardware with E810 100GbE NICs.</p>
+        <div class="intel-validation-links">
+          <a href="https://networkbuilders.intel.com" target="_blank" rel="noopener" class="intel-link">Download white paper &rarr;</a>
+          <a href="https://gate-speed.com/intel-labs" target="_blank" rel="noopener" class="intel-link">Intel Labs partnership &rarr;</a>
+        </div>
+      </div>
       <div class="table-wrap reveal">
         <table class="benchmark-table">
           <thead>
@@ -92,17 +99,12 @@
           </tbody>
         </table>
       </div>
-      <p class="benchmark-footnote reveal">All results from Intel Labs white paper testing. Test hardware: Intel Xeon Gold 6230N / 6342, Intel E810-2CQDA2 100GbE NICs, Intel QAT 8970.</p>
+      <p class="benchmark-footnote reveal">All results from Intel Labs white paper testing. Test hardware: Intel Xeon Gold 6230N / 6342, Intel E810-2CQDA2 100GbE NICs, Intel QAT 8970. <a href="https://networkbuilders.intel.com" target="_blank" rel="noopener">Read the white paper &rarr;</a></p>
     </div>
   </section>
 
   <section class="feature-section">
     <div class="container">
-      <div class="feature-intro reveal">
-        <h2 class="section-heading">Feature coverage for deployed workloads</h2>
-        <p class="feature-lead">GTX2 is built around the functions teams actually deploy: distributing traffic, enforcing policy, encrypting site-to-site tunnels, and moving high volumes of data on the commodity x86 hardware you already run.</p>
-      </div>
-
       <div class="feature-carousel reveal" data-feature-carousel>
         <button class="feature-carousel-control feature-carousel-control-prev" type="button" data-feature-prev aria-label="Previous focus area">
           <span aria-hidden="true">&larr;</span>
