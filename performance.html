@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Performance | GTX2</title>
-  <meta name="description" content="GTX2 runs load balancing, firewall, NAS, and nginx-facing traffic on a userspace data plane validated by Intel Labs.">
+  <meta name="description" content="GTX2 delivers load balancing, firewall, VPN, and high-throughput data movement on a userspace data plane validated by Intel Labs.">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/performance.css">
 </head>
@@ -27,15 +27,15 @@
 
   <header class="page-header">
     <div class="container reveal">
-      <h1 class="page-heading">Performance for the roles you actually deploy</h1>
-      <p class="section-sub">GTX2 runs load balancing, firewall, NAS, and nginx-facing traffic on a userspace data plane, with Intel Labs validation behind the core forwarding and HTTP workloads.</p>
+      <h1 class="page-heading">Performance across the workloads you run</h1>
+      <p class="section-sub">GTX2 delivers load balancing, firewall, VPN, and high-throughput data movement on a userspace data plane, with Intel Labs validation behind the core forwarding and HTTP workloads.</p>
     </div>
   </header>
 
   <section class="benchmark-section">
     <div class="container">
       <h2 class="section-heading reveal">Validated workloads</h2>
-      <p class="benchmark-intro reveal">Intel Labs validation covers the forwarding, VPN, HTTP, and HTTPS paths that sit underneath these deployments.</p>
+      <p class="benchmark-intro reveal">Intel Labs validated forwarding, VPN, and HTTP throughput on commodity Intel hardware.</p>
       <div class="table-wrap reveal">
         <table class="benchmark-table">
           <thead>
@@ -100,7 +100,7 @@
     <div class="container">
       <div class="feature-intro reveal">
         <h2 class="section-heading">Feature coverage for deployed workloads</h2>
-        <p class="feature-lead">GTX2 is built around the functions teams actually deploy: distributing traffic, enforcing policy, sitting in front of application servers, and carrying storage-heavy flows on the commodity x86 hardware you already run.</p>
+        <p class="feature-lead">GTX2 is built around the functions teams actually deploy: distributing traffic, enforcing policy, encrypting site-to-site tunnels, and moving high volumes of data on the commodity x86 hardware you already run.</p>
       </div>
 
       <div class="feature-carousel reveal" data-feature-carousel>
@@ -122,15 +122,15 @@
             </article>
 
             <article class="feature-card feature-slide feature-slide-storage">
-              <h3 class="feature-card-title">NAS</h3>
-              <p class="feature-card-body">Use the same high-throughput packet path for storage-heavy east-west traffic and NAS-facing nodes without carving out a separate appliance tier.</p>
-              <div class="feature-card-proof mono">Runs on the same commodity x86 footprint as the rest of the fleet</div>
+              <h3 class="feature-card-title">VPN</h3>
+              <p class="feature-card-body">Terminate site-to-site and remote-access IPsec tunnels entirely in userspace, keeping encrypted throughput close to unencrypted forwarding speeds.</p>
+              <div class="feature-card-proof mono">IPsec VPN validated at 92 Gbps software, 96 Gbps with QAT</div>
             </article>
 
             <article class="feature-card feature-slide feature-slide-delivery">
-              <h3 class="feature-card-title">nginx support</h3>
-              <p class="feature-card-body">Deploy GTX2 in front of nginx or alongside it, keeping the existing HTTP stack while offloading the traffic handling that usually burns kernel time.</p>
-              <div class="feature-card-proof mono">HTTPS validated at 61 to 74 Gbps with QAT assist</div>
+              <h3 class="feature-card-title">High-throughput data movement</h3>
+              <p class="feature-card-body">Carry storage-heavy and bulk transfer traffic across the fleet on the same high-throughput packet path used for every other workload.</p>
+              <div class="feature-card-proof mono">HTTP (2MB files) throughput validated at 82 to 85 Gbps</div>
             </article>
           </div>
         </div>
@@ -143,23 +143,23 @@
 
   <section class="deployment-section">
     <div class="container">
-      <h2 class="section-heading reveal">How it shows up in production</h2>
+      <h2 class="section-heading reveal">Production deployment patterns</h2>
       <div class="deployment-list reveal">
         <div class="deployment-row">
           <div class="deployment-title">Edge load balancer</div>
-          <p class="deployment-body">Front multiple application pools with userspace connection distribution, then leave nginx or origin services unchanged behind it.</p>
+          <p class="deployment-body">Front multiple application pools with userspace connection distribution, then leave origin services unchanged behind it.</p>
         </div>
         <div class="deployment-row">
           <div class="deployment-title">Inline firewall</div>
           <p class="deployment-body">Keep security policy and forwarding on the same software path instead of splitting routing and filtering across separate boxes.</p>
         </div>
         <div class="deployment-row">
-          <div class="deployment-title">NAS front end</div>
-          <p class="deployment-body">Place GTX2 in front of NAS-heavy services where throughput matters more than appliance branding and keep operations on standard Intel servers.</p>
+          <div class="deployment-title">Site-to-site VPN</div>
+          <p class="deployment-body">Terminate IPsec tunnels in userspace and carry encrypted traffic at the same throughput as unencrypted forwarding.</p>
         </div>
         <div class="deployment-row">
-          <div class="deployment-title">nginx acceleration path</div>
-          <p class="deployment-body">Put GTX2 next to nginx when you want to preserve the application-facing stack but remove the kernel bottlenecks in front of it.</p>
+          <div class="deployment-title">High-throughput data movement</div>
+          <p class="deployment-body">Move storage-heavy and bulk transfer traffic across the fleet on the same packet path used for every other workload.</p>
         </div>
       </div>
     </div>
@@ -169,7 +169,7 @@
     <div class="container">
       <div class="scaling-card reveal">
         <h2 class="scaling-title">Scale features by core, not by appliance</h2>
-        <p class="scaling-body">Whether the node is fronting nginx, enforcing firewall policy, or handling storage-heavy traffic, performance scales linearly with core count from Intel Atom through Xeon Scalable. No specialized hardware required.</p>
+        <p class="scaling-body">Whether the node is fronting a VPN gateway, enforcing firewall policy, or handling high-throughput data movement, performance scales linearly with core count from Intel Atom through Xeon Scalable, on the hardware you already run.</p>
       </div>
     </div>
   </section>
